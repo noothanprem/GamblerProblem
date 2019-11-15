@@ -26,17 +26,27 @@ class Gambler:
 		return self.daily_stake_amount
 		
 	def count_days(self):
+		total_amount = 0
 		day_count=1
+		amount_difference = 0
 		for day in range(20):
 			
 			final_stake_amount = self.win_or_lose()
 			print("stake for the day : " ,final_stake_amount)
-			if(final_stake_amount > 100):
-				print("You Won : ",final_stake_amount)
-			else:
-				print("You lose :",final_stake_amount)
+			#if(final_stake_amount > 100):
+			amount_difference = final_stake_amount - 100
+			print("amount difference : ",amount_difference)
+			total_amount += amount_difference
+				
+			#else:
+				#total_amount -= final_stake_amount 
+				#print("You lose :",final_stake_amount)
 			print("day :",day_count)
 			day_count += 1
+		if(total_amount < 0):
+			print("Lose : ",abs(total_amount))
+		else:
+			print("win : ",total_amount)
 				
 			
 		
