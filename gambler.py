@@ -28,6 +28,7 @@ class Gambler:
 	def count_days(self):
 		total_amount = 0
 		day_count=1
+		days_list = []
 		amount_difference = 0
 		for day in range(20):
 			
@@ -42,11 +43,26 @@ class Gambler:
 				#total_amount -= final_stake_amount 
 				#print("You lose :",final_stake_amount)
 			print("day :",day_count)
+			days_list.append(total_amount)
 			day_count += 1
 		if(total_amount < 0):
 			print("Lose : ",abs(total_amount))
 		else:
 			print("win : ",total_amount)
+		return days_list
+
+	def daily_won_lose(self):
+		days_list=self.count_days()
+		print(days_list)
+		for day in range(len(days_list)):
+			if(days_list[day] > 0):
+				print(day+1," won ",days_list[day])
+			elif(days_list[day] < 0):
+				print(day+1," Lose ",abs(days_list[day]))
+			else:
+				print(day+1," Tie ")
+			
+		
 				
 			
 		
@@ -54,7 +70,7 @@ class Gambler:
 	
 if __name__ == "__main__":
 	gambler_object=Gambler()
-	gambler_object.count_days()
+	gambler_object.daily_won_lose()
 	
 
 
