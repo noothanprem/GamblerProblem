@@ -45,10 +45,11 @@ class Gambler:
 			print("day :",day_count)
 			days_list.append(total_amount)
 			day_count += 1
-		if(total_amount < 0):
-			print("Lose : ",abs(total_amount))
+		if(total_amount > 0):
+			print("You won in this month, continue with the next mont")
+			return self.count_days()
 		else:
-			print("win : ",total_amount)
+			print("You lose in this month, ending the game")
 		return days_list
 
 	def daily_won_lose(self):
