@@ -1,14 +1,14 @@
 import random
 class Gambler:
-	starting_stake_amount = 100
+	STARTING_STAKE_AMOUNT = 100
 	bet_amount = 1
 	daily_stake_amount = 100 
 	won_count=lose_count=0
 	win_percentage=lose_percentage=0
 	def win_or_lose(self):
 		self.daily_stake_amount=100
-		self.win_percentage = self.starting_stake_amount + (self.starting_stake_amount/2)
-		self.lose_percentage = self.starting_stake_amount / 2
+		self.win_percentage = self.STARTING_STAKE_AMOUNT + (self.STARTING_STAKE_AMOUNT/2)
+		self.lose_percentage = self.STARTING_STAKE_AMOUNT / 2
 		self.won_count=self.lose_count=0
 		print("daily stake amount at first: ",self.daily_stake_amount)
 		print("win percentage at first : ",self.win_percentage)
@@ -45,8 +45,9 @@ class Gambler:
 			print("day :",day_count)
 			days_list.append(total_amount)
 			day_count += 1
+	
 		if(total_amount > 0):
-			print("You won in this month, continue with the next mont")
+			print("You won in this motnh, continue with the next mont")
 			return self.count_days()
 		else:
 			print("You lose in this month, ending the game")
