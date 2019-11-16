@@ -61,7 +61,24 @@ class Gambler:
 				print(day+1," Lose ",abs(days_list[day]))
 			else:
 				print(day+1," Tie ")
-			
+
+	def  luckiest_and_unluckiest_day(self):
+		daily_amount_list=self.count_days()
+		print("daily amount list",daily_amount_list)
+		max_amount = 0
+		min_amount = 0
+		max_amount_index = 0
+		min_amount_index = 0
+		for daily_amount_list_index in range(len(daily_amount_list)):
+			if daily_amount_list[daily_amount_list_index] > max_amount :
+				max_amount = daily_amount_list[daily_amount_list_index]
+				max_amount_index = daily_amount_list_index
+			elif daily_amount_list[daily_amount_list_index] < min_amount :
+				min_amount = daily_amount_list[daily_amount_list_index]
+				min_amount_index = daily_amount_list_index
+		print("Luckiest day : ",max_amount_index + 1,"with an amount of : ",max_amount)
+		print("Unluckiest day :",min_amount_index + 1,"with an amount of :",min_amount)
+
 		
 				
 			
@@ -71,6 +88,7 @@ class Gambler:
 if __name__ == "__main__":
 	gambler_object=Gambler()
 	gambler_object.daily_won_lose()
+	gambler_object.luckiest_and_unluckiest_day()
 	
 
 
